@@ -1,0 +1,25 @@
+.filter{
+    width: 100%;
+    height: auto;
+
+    background-color: white;
+    justify-content: flex-start !important;
+    margin: auto;
+    margin-top: 20px;
+
+    &>div{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start !important;
+        margin-right: 20px;
+    }
+
+    .inputs{
+        width:100%;
+        margin: auto;
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+
+    }
+}

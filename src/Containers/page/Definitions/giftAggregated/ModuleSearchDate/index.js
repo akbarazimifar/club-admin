@@ -1,0 +1,104 @@
+import React, { useState } from 'react'
+
+import DatePicker from "../../../../Common/Components/DatePicker";
+import { dateConverttShamsiToMiladi } from '../../../../Common/method/date';
+import { Box, makeStyles, Button, LinearProgress } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    root: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: "center",
+        height: '90vh'
+    },
+    card: {
+        backgroundColor: 'white',
+        position: 'relative',
+        padding: 15,
+    },
+    LinearProgress: {
+        position: 'absolute',
+        width: '100%',
+        top: 0,
+        left: 0
+    },
+    btn: {
+        width: 200,
+        marginTop: '15px'
+    },
+    desc: {
+        fontSize: 11,
+        color: 'red'
+    }
+})
+
+export default function Index({ reducerGift, apiSelectGiftAggregated, state, setState }) {
+
+    let classes = useStyles()
+
+    const handelChange = (value, type) => {
+        setState(prev => ({
+            ...prev,
+            [type]: value
+        }))
+    }
+
+    const handleSubmit = () => {
+        apiSelectGiftAggregated()
+    }
+
+    return (
+        <div className={classes['root']}>
+            <div className={classes['card']}>
+                {
+                    reducerGift.loading && (
+                        <div className={classes['LinearProgress']}>
+                            <LinearProgress />
+                        </div>
+                    )
+                }
+                <Box width={200} m={3}>
+                    <DatePicker label="از تاریخ">
+                        {
+                            (data) =>
+                                handelChange(
+                                    data
+                                        ? `${dateConverttShamsiToMiladi(data)}`
+                                        : null,
+                                    "start_time"
+                                )
+                        }
+                    </DatePicker>
+                </Box>
+                <Box width={200} m={3}>
+                    <DatePicker label="تا تاریخ">
+                        {
+                            (data) =>
+                                handelChange(
+                                    data
+                                        ? `${dateConverttShamsiToMiladi(data)}`
+                                        : null,
+                                    "end_time"
+                                )
+                        }
+                    </DatePicker>
+                </Box>
+                <Box width={200} m={3}>
+                    <Button className={classes['btn']} variant="outlined" color="primary" onClick={handleSubmit}>
+                        تایید
+                  </Button>
+                </Box>
+                {
+                    reducerGift.loading && (
+                        <Box width={200} m={3}>
+                            <p className={classes['desc']}>
+                                تهیه این گزارش ممکن است چند دقیقه زمان بر باشد لطفا صبر نمایید
+                        </p>
+                        </Box>
+                    )
+                }
+
+            </div>
+        </div>
+    )
+}

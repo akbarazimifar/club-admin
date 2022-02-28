@@ -1,0 +1,12 @@
+.chart{
+    width: 50%;
+    height: auto;
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bar{
+        width: 70%;
+    }
+}

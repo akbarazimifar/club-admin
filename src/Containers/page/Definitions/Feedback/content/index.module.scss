@@ -1,0 +1,78 @@
+.box{
+    width: 96.5%;
+    margin-top : 15px;
+    margin-right: 1.75%;
+    background-color: white;
+    display:inline-block;
+    overflow-y: auto;
+    
+
+    .boxQuestion{
+        display: block !important;
+        .boxQuestionHead{
+            display: flex;
+            justify-content: space-between;
+            width: 100% !important;
+            & > div{
+            width: 33.3%    ;
+            }
+            .textCenterCustom{
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nationa_id{
+                background-color: transparent;
+                border: none;
+                text-align: left;
+            }
+            .btnsNationalId{
+                position: relative;
+            
+            }
+        }
+        .boxQuestionBody{
+            padding-top: 15px;
+            width: 100%;
+
+
+        }
+    }
+
+    .answerTextaria{
+        width: 100%;
+        height: 200px;
+        background-color: gray;
+        textarea{
+            width: 100% !important;
+            height: 100%;
+            resize: none;
+            border: 1px solid gray;
+            // padding: 10px;
+        }
+                .button{
+                    position: relative;
+                    padding: 5px 10px;
+                    border-radius: 12px;
+                    background-color: white;
+                    cursor: pointer;
+                    top: -54px;
+                    float: left;
+                    left: 15px;
+                }
+    }
+
+    .answerDone{
+        width: 100%;
+        .answerDoneFooter{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            width: 100%;
+            font-size: 0.9em;
+        }
+    }
+
+}

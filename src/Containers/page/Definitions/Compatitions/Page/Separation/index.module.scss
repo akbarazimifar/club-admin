@@ -1,0 +1,31 @@
+.Separation{
+    width: 99%;
+    margin: auto;
+    min-height: 80vh;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    // background-color: white;
+
+    .gird{
+        width: 50%;
+        border-radius: 8px;
+        padding: 5px;
+        overflow: auto;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        max-height: 680px;
+        background-color: white;
+        margin-right: 10px;
+    }
+    .gird1{
+        width: 50%;
+        border-radius: 8px;
+        padding: 5px;
+        overflow: auto;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        max-height: 680px;
+        background-color: white;
+        margin-right: 10px;
+    }
+}
